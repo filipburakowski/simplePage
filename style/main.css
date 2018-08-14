@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+.hidden {
+    display: none;
+}
+
+header {
+    background-color: gray;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content:flex-end;
+}
+
+.navigationList {
+    display: none;
+    margin: 8px 0;
+}
+
+.navigationList.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 34px;
+}
+
+.navigationList li {
+    list-style: none;
+    background-color: grey;
+    padding: 8px;
+}
+
+.navigationList li a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    padding: 8px;
+    margin: 8px;
+}
+
+.navigationList li a:hover {
+    background-color: green;
+    text-decoration: underline;
+}
+
+.hamburger-menu {
+    margin: 10px;
+}
+
+.hamburger-menu:hover {
+    cursor: pointer;
+}
+
+.hamburger-menu img {
+    height: 30px;
+    width: 30px;
+    border-radius: 3px;
+}
+
+
+.slider img {
+    width: 100%;
+}
+
+.companyInformation,
+.contactForm {
+    width: 100%;
+    float: left;
+    padding: 16px;
+    box-sizing: border-box;
+    opacity: 0;
+}
+
+.animationFadeIn {
+    transition: opacity 1.5s;
+    opacity: 1;
+}
+
+.companyInformation .companyDetails img {
+    float: left;
+    margin: 0 8px 8px 0;
+}
+
+.companyInformation .companyDetails p {
+    text-align: justify;
+}
+
+.column-100 {
+    width: 100%;
+    float: left;
+}
+
+.contactForm .contactForm__label,
+.contactForm .contactForm__input,
+.contactForm .contactForm__textArea,
+.contactForm .contactForm__select {
+    display: block;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.contactForm .contactForm__input,
+.contactForm .contactForm__textArea,
+.contactForm .contactForm__select {
+    border-radius: 5px;
+    background-color: #E6E1DF;
+    border: 0;
+    width: 100%;
+}
+
+.contactForm .contactForm__input--submit {
+    display: block;
+    padding: 8px;
+    border-radius: 5px;
+    border: 0;
+    width: 100%;
+    background-color: green;
+    color: black
+}
+
+.contactForm .contactForm__input--submit:hover {
+    background-color: darkgreen;
+}
+
+.contactForm .contactForm__textArea {
+    min-height: 200px;
+}
+
+.contactForm .contactForm__checkboxElement {
+    width: 100%;
+    padding: 8px 0;
+    float: left;
+    margin: 8px 0;
+}
+
+.contactForm .contactForm__checkboxElement .contactForm__label--displayedInline {
+    box-sizing: border-box;
+    padding: 0 0 0 24px;
+    display: inline;
+    position: relative;
+}
+
+.contactForm .contactForm__checkboxElement .contactForm__checkbox {
+    display: none;
+}
+
+.contactForm .contactForm__checkboxElement .contactForm__label--displayedInline:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #E6E1DF;
+}
+
+.contactForm__checkbox:checked + .contactForm__label--displayedInline:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border: 0;
+    border-radius: 5px;
+    background-color: green;
+    z-index: 2;
+}
+
+.contactForm .contactForm__checkboxElement .contactForm__showAgreement {
+    color: blue;
+    text-decoration: underline;
+}
+
+.contactForm .contactForm__checkboxElement .contactForm__showAgreement:hover {
+    cursor: pointer;
+    color: cyan;
+}
+
+.makeSmaller {
+    font-size: 5px;
+}
+
+@media screen and (min-width: 600px) {
+    .column-50 {
+        width: calc(50% - 4px);
+        float: left;
+    }
+    .column-50:first-child {
+        margin: 0 8px 0 0;
+    }
+    .hamburger-menu {
+        display: none;
+    }
+    .navigation-bar ul {
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .contactForm,
+    .companyInformation {
+        max-width: 50%;
+    }
+}
