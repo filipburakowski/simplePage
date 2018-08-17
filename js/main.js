@@ -1,7 +1,7 @@
 const getElement = (selector) => document.querySelector(selector);
 
-const arrayClassName = Array.from(document.getElementsByClassName('contactForm__showAgreement'));
-const navigationButton = getElement('.hamburger-menu');
+const showMoreNodes = Array.from(document.getElementsByClassName('contactForm__showAgreement'));
+const navigationButton = getElement('.hamburgerMenu__hamburgerButton');
 
 const toggleInformationVisibility = function () {
     const target = this.getAttribute('data-target');
@@ -10,32 +10,16 @@ const toggleInformationVisibility = function () {
 };
 
 const toggleMenu = function () {
-    const navigationList = getElement('.navigationList');
+    const navigationList = getElement('.navigationBar__navigationList');
     navigationList.classList.toggle('open');
 };
 
-const addEventsToShowMoreAgreements = () => arrayClassName.map(
+const addEventsToShowMoreAgreements = () => showMoreNodes.map(
     (element)=>element.addEventListener('click',toggleInformationVisibility)
 );
 
 
 // ------------ ANIMACJE
-
-// const companyDetails = getElement('.companyInformation');
-//
-// function returnElementPositionFromTopScreen (element) {
-//     let offsetElementFromTop = element.offsetTop;
-//     let scrollFromTop = document.scrollingElement.scrollTop;
-//     return offsetElementFromTop-scrollFromTop;
-// }
-//
-// function elementFadeInWhenOnScreen (element) {
-//     let windowHeight = window.innerHeight;
-//     let elementTopDistanceFromTopDocument = returnElementPositionFromTopScreen(element);
-//     let elementHeight = element.clientHeight;
-//     if ((elementTopDistanceFromTopDocument+elementHeight/4)<=windowHeight)
-//         {element.classList.add('animationFadeIn')}
-// }
 
 const elementsOfSite =  Array.from(document.querySelectorAll('.elementFadeIn'));
 
@@ -126,10 +110,8 @@ elementsOfSite.forEach(item => {
 
 // fetchData();
 addEventsToShowMoreAgreements();
-// elementFadeInWhenOnScreen(companyDetails);
 
 navigationButton.addEventListener('click',toggleMenu);
-// document.addEventListener('scroll',()=>elementFadeInWhenOnScreen(companyDetails));
 
 
 

@@ -18,14 +18,15 @@ header {
     height: 50px;
     display: flex;
     justify-content:flex-end;
+
 }
 
-.navigationList {
+.navigationBar__navigationList {
     display: none;
     margin: 8px 0;
 }
 
-.navigationList.open {
+.navigationBar__navigationList.open {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -33,13 +34,13 @@ header {
     top: 34px;
 }
 
-.navigationList li {
+.navigationBar__navigationList li {
     list-style: none;
     background-color: grey;
     padding: 8px;
 }
 
-.navigationList li a {
+.navigationBar__navigationList li a {
     text-transform: uppercase;
     text-decoration: none;
     color: white;
@@ -47,28 +48,58 @@ header {
     margin: 8px;
 }
 
-.navigationList li a:hover {
+.navigationBar__navigationList li a:hover {
     background-color: green;
     text-decoration: underline;
 }
 
-.hamburger-menu {
-    margin: 10px;
+.hamburgerMenu {
+    margin: 7px 30px;
 }
 
-.hamburger-menu:hover {
+.hamburgerMenu:hover {
     cursor: pointer;
 }
 
-.hamburger-menu img {
-    height: 30px;
-    width: 30px;
-    border-radius: 3px;
+.hamburgerMenu__hamburgerButton {
+    width: 40px;
+    height: 35px;
+    border: 0;
+    border-top: 5px solid white;
+    background-color: transparent;
+    position: relative;
+}
+
+.hamburgerMenu__hamburgerButton:before,
+.hamburgerMenu__hamburgerButton:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-top: 5px solid white;
+    transform: translateY(10px);
 }
 
 
+.hamburgerMenu__hamburgerButton:after {
+    transform: translateY(25px);
+}
+
+/*.hamburgerMenu__hamburgerButton:focus:after {*/
+    /*transform: rotate(-45deg);*/
+    /*transition: 0.5s transform linear;*/
+/*}*/
+
+/*.hamburgerMenu__hamburgerButton:focus:before {*/
+    /*transform: rotate(45deg);*/
+    /*transition: 0.5s transform linear;*/
+/*}*/
+
 .slider img {
     width: 100%;
+    height: calc(100vh - 50px);
+    object-fit: cover;
 }
 
 .companyInformation,
@@ -92,6 +123,14 @@ header {
 
 .companyInformation .companyDetails p {
     text-align: justify;
+}
+
+.companyInformation__header {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 16px 0;
+    padding: 0 0 8px 0;
+    border-bottom: 3px solid green;
 }
 
 .column-100 {
@@ -164,7 +203,7 @@ header {
     background-color: #E6E1DF;
 }
 
-.contactForm__checkbox:checked + .contactForm__label--displayedInline:after {
+.contactForm__checkbox:checked + .contactForm__label--displayedInline:before {
     content: '';
     position: absolute;
     left: 0;
@@ -186,22 +225,25 @@ header {
     color: cyan;
 }
 
-.makeSmaller {
+.fetchDataMakeSmaller {
     font-size: 5px;
 }
 
 @media screen and (min-width: 600px) {
+    .column-50:nth-child(2) {
+        margin: 0 4px 0 0;
+    }
+    .column-50:nth-child(3) {
+        margin: 0 0 0 4px;
+    }
     .column-50 {
         width: calc(50% - 4px);
         float: left;
     }
-    .column-50:first-child {
-        margin: 0 8px 0 0;
-    }
-    .hamburger-menu {
+    .hamburgerMenu {
         display: none;
     }
-    .navigation-bar ul {
+    .navigationBar ul {
         display: flex;
     }
 }
@@ -211,4 +253,5 @@ header {
     .companyInformation {
         max-width: 50%;
     }
+
 }

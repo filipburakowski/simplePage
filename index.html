@@ -8,20 +8,20 @@
     <link rel="stylesheet" type="text/css" media="screen" href="style/main.css"/>
 </head>
 <body>
-<header>
-    <div class="hamburger-menu">
-        <img src="images/hamburger-menu.png" alt="menu-button">
+<header class="header">
+    <div class="hamburgerMenu">
+        <button class="hamburgerMenu__hamburgerButton"></button>
     </div>
-    <nav class="navigation-bar">
-        <ul class="navigationList">
+    <nav class="navigationBar">
+        <ul class="navigationBar__navigationList">
             <li>
                 <a href="#">OFFER</a>
             </li>
             <li>
-                <a href="#">INFORMATION</a>
+                <a href="#aboutUs">INFORMATION</a>
             </li>
             <li>
-                <a href="#">CONTACT</a>
+                <a href="#contactUs">CONTACT</a>
             </li>
         </ul>
     </nav>
@@ -32,9 +32,12 @@
             <img src="images/placeholder.jpeg" alt="slider"/>
         </div>
     </section>
-    <section class="contact-information">
-        <div class="companyInformation elementFadeIn">
-            <div class="companyDetails">
+    <section class="pageContent">
+        <div class="companyInformation elementFadeIn"
+            id="aboutUs">
+            <div class="companyInformation__companyDetails">
+                <h2 class="companyInformation__header"
+                    align="center">About Us</h2>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, quisquam. Veritatis,
                     blanditiis, eum vitae praesentium
@@ -49,12 +52,15 @@
                     nobis!
                 </p>
             </div>
-            <div class="makeSmaller">
-                <!--FETCH DATA-->
+            <div class="fetchDataMakeSmaller">
+                <!--FETCHED DATA GOES HERE-->
             </div>
         </div>
         <form class="contactForm elementFadeIn"
-            action="#">
+            action="#"
+            id="contactUs">
+            <h2 class="companyInformation__header"
+                align="center">Contact Us</h2>
             <div class="column-50">
                 <label for="form-contact-name"
                        class="contactForm__label">Your Name:</label>
@@ -104,7 +110,8 @@
                 <span class="contactForm__showAgreement"
                       data-target="agreement1">Learn more...</span>
                 <p class="contactForm__additionalInformation hidden"
-                   data-agree="agreement1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, delectus deleniti, dolorem eligendi, est expedita explicabo fugiat harum in magnam neque nobis omnis praesentium quas rem sint tempora tenetur voluptatum.</p>
+                   data-agree="agreement1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, delectus deleniti, dolorem eligendi, est expedita explicabo fugiat harum in magnam neque nobis omnis praesentium quas rem sint tempora tenetur voluptatum.
+                </p>
             </div>
             <div class="contactForm__checkboxElement">
                 <input type="checkbox"
@@ -113,11 +120,11 @@
                        id="checkboxRodo"
                        required>
                 <label for="checkboxRodo"
-                       class="contactForm__label--displayedInline">I've read and hereby accept RODO</label>
+                       class="contactForm__label--displayedInline">I've read and hereby accept rodo agreement</label>
                 <span class="contactForm__showAgreement"
                       data-target="agreement2">Learn more...</span>
                 <p class="contactForm__additionalInformation hidden"
-                   data-agree="agreement2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem exercitationem laudantium porro quam reiciendis repellat voluptas voluptates? Beatae dolor, minima mollitia nemo non placeat possimus quia quibusdam saepe totam voluptatem?
+                   data-agree="agreement2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, delectus deleniti, dolorem eligendi, est expedita explicabo fugiat harum in magnam neque nobis omnis praesentium quas rem sint tempora tenetur voluptatum.
                 </p>
             </div>
             <input type="submit"
