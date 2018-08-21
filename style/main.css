@@ -13,7 +13,7 @@ body {
 }
 
 header {
-    background-color: gray;
+    background-color: rgb(32, 32, 32);
     width: 100%;
     height: 50px;
     display: flex;
@@ -21,6 +21,13 @@ header {
 
 }
 
+.brandLogo {
+    width: 200px;
+    height: 40px;
+    position: absolute;
+    left: 16px;
+    top: 5px;
+}
 .navigationBar__navigationList {
     display: none;
     margin: 8px 0;
@@ -36,7 +43,7 @@ header {
 
 .navigationBar__navigationList li {
     list-style: none;
-    background-color: grey;
+    background-color: rgb(32, 32, 32);
     padding: 8px;
 }
 
@@ -49,7 +56,7 @@ header {
 }
 
 .navigationBar__navigationList li a:hover {
-    background-color: green;
+    background-color: darkgreen;
     text-decoration: underline;
 }
 
@@ -102,6 +109,32 @@ header {
     object-fit: cover;
 }
 
+.applicationOffer {
+    width: 100%;
+
+}
+.applicationOffer__feature {
+    width: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+    text-align: center;
+    opacity: 0;
+}
+
+.applicationOffer__feature .applicationOffer__description {
+    margin: 0;
+    box-sizing: border-box;
+    border-top: 3px solid green;
+    text-align: justify;
+    padding: 16px 0;
+}
+
+.applicationOffer .applicationOffer__icon {
+    width: 70px;
+    padding: 0 0 10px 0;
+
+}
+
 .companyInformation,
 .contactForm {
     width: 100%;
@@ -116,12 +149,12 @@ header {
     opacity: 1;
 }
 
-.companyInformation .companyDetails img {
+.companyInformation .companyInformation__companyDetails img {
     float: left;
     margin: 0 8px 8px 0;
 }
 
-.companyInformation .companyDetails p {
+.companyInformation .companyInformation__companyDetails p {
     text-align: justify;
 }
 
@@ -182,8 +215,8 @@ header {
 }
 
 .contactForm .contactForm__checkboxElement .contactForm__label--displayedInline {
-    box-sizing: border-box;
     padding: 0 0 0 24px;
+    width: calc(100% - 24px);
     display: inline;
     position: relative;
 }
@@ -246,6 +279,10 @@ header {
     .navigationBar ul {
         display: flex;
     }
+    .applicationOffer__feature {
+        width: 50%;
+        float: left;
+    }
 }
 
 @media screen and (min-width: 1000px) {
@@ -253,5 +290,8 @@ header {
     .companyInformation {
         max-width: 50%;
     }
-
+    .applicationOffer__feature {
+        width: 25%;
+        float: left;
+    }
 }
