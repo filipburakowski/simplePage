@@ -19,7 +19,7 @@ const addEventsToShowMoreAgreements = () => showMoreNodes.map(
 );
 
 
-// ------------ ANIMACJE
+// ------------ ANIMATIONS TO APPEAR WHEN ON SCREEN
 
 const elementsOfSite =  Array.from(document.querySelectorAll('.elementFadeIn'));
 
@@ -34,81 +34,8 @@ elementsOfSite.forEach(item => {
 });
 
 
-// ------------ POBIERANIE
+// ------------ START SCRIPT
 
-
-// const sectionContainer = getElement('.makeSmaller');
-//
-// const fetchData = () => (
-//     fetch('https://jsonplaceholder.typicode.com/posts')
-//         .then((response)=>response.json())
-//         .then((data)=>data.map((post)=>presentData(post))
-//         )
-//         .catch((error)=>console.log(error))
-// );
-
-// const fetchData = () => (
-//     fetch('https://jsonplaceholder.typicode.com/posts')
-//         .then((response)=>response.json())
-//         .then((data)=>data.map((post)=>presentData(post)))
-//         .catch((error)=>console.log(error))
-// );
-//
-// function presentData (post) {
-//     const postContainer = createAndReturnElement('div','');
-//     postContainer.appendChild(createAndReturnElement('h2', post.id + ' ' + post.title));
-//     postContainer.appendChild(createAndReturnElement('p', post.body));
-//     sectionContainer.appendChild(postContainer);
-// }
-//
-// function createAndReturnElement (elementType, text) {
-//     const element  = document.createElement(elementType);
-//     element.innerHTML = text;
-//     return element
-// }
-
-// -------------- WYSYŁANIE
-// const form = getElement('.contactForm');
-// const submitButton = getElement('.contactForm__input--submit');
-//
-// submitButton.addEventListener('click', (event) => sendForm(event));
-//
-// function prepareAndReturnFormData () {
-//     const formData = new FormData(form);
-//     const messageText = getElement('.contactForm__textArea').value;
-//     const messageTopic = getElement('.contactForm__select').value;
-//     formData.append('messageText',messageText);
-//     formData.append('messageTopic',messageTopic);
-//     return formData;
-// }
-//
-// function sendForm (event) {
-//     event.preventDefault();
-//     const formData = prepareAndReturnFormData();
-//     fetch(formData.action, {
-//         method: 'GET',
-//         data: formData,
-//     })
-//         .then((response)=>
-//         console.log(...formData)
-//         );
-//     // alert('Formularz wysłany')
-//     form.classList.add('hidden')
-// }
-//
-// function replaceFormAfterSend () {
-//
-// }
-
-
-
-
-
-
-
-// START SCRIPT
-
-// fetchData();
 addEventsToShowMoreAgreements();
 
 navigationButton.addEventListener('click',toggleMenu);
